@@ -2,10 +2,15 @@ import requests
 import xml.etree.ElementTree as ET
 import asyncio
 from telegram import Bot
+import os
+from dotenv import load_dotenv
 
 # Telegram bot ayarları
-TELEGRAM_TOKEN = "7599491092:AAFJz1K9GPGwY_DugwDNtRIzaEe6E6vZzD0"
-TELEGRAM_CHAT_ID = "1660853466"
+# .env dosyasından gerekli bilgileri yükle
+load_dotenv()
+
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 async def send_telegram(message):
     bot = Bot(token=TELEGRAM_TOKEN)
