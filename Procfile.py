@@ -1,0 +1,1 @@
+start: python altin_bot.py
